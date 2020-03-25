@@ -1,0 +1,19 @@
+root = true
+
+[*]
+indent_style = space
+
+[*.{cs,js,less,sass,css,yml}]
+indent_style = 2
+
+[*.json]
+indent_style = 2
+
+[*.php]
+indent_style = 4
+
+[*.{yaml,yml}]
+indent_style = 4
+
+[*.{html,twig,html.twig}]
+indent_style = 2
