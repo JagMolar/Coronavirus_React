@@ -1,25 +1,25 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
+  "short_name": "Coronavirus",
+  "name": "React en tiempos de Coronavirus",
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Coronavirus"
+  },
+  "icons": 
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "16": "icon16.png",
+      "24": "icon24.png",
+      "32": "icon32.png",
+      "128": "icon128.png"
     },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "permissions":[
+    "storage"
+  ],
+  "manifest_version": 2,
+  "version": "1.0",
+  "content_security_policy": "script-src 'self' 'sha256-yHe0Bb7yJjY05zTRj23A2HdK3uFQOeiwEi5y8c66+I8='; object-src 'self'"
 }

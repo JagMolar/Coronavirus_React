@@ -1,10 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import useFetch from 'hooks/useFetch';
+import useCoronavirusData from 'hooks/useCoronavirusData';
+// import useFetch from 'hooks/useFetch';
 import DataList from 'components/UI/DataList';
 
-const Spain = function(globalData){
-  const {data, loading} = useFetch('https://enrichman.github.io/covid19/world/spain/data.json');
+const Spain = function({globalData}){
+  const {data, loading} = useCoronavirusData('/spain/data.json');
 
   if(loading){
     return(<div>Cargando los datos de hoy....</div>);

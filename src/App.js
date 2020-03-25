@@ -2,12 +2,15 @@ import React, {useState, lazy, Suspense} from 'react';
 import { BrowserRouter as Router, Switch, Route}  from 'react-router-dom';
 import styled, {ThemeProvider} from 'styled-components';
 import MainMenu from 'components/UI/MainMenu';
-import {contact, formikContact ,home, spain} from 'conf/routes';
+import RequireAuth from 'components/RequireAuth';
+import {contact, formikContact ,home, spain, login, logout} from 'conf/routes';
 import {darkTheme, lightTheme} from 'styles/theme';
 import GlobalStyle from 'styles/GlobalStyle';
 // import './App.css';
 
 const Home = lazy(()=> import('components/screens/Home'));
+const Login = lazy(()=> import('components/screens/Login'));
+const Logout = lazy(()=> import('components/screens/Logout'));
 const Spain = lazy(()=> import('components/screens/Spain'));
 const Contact = lazy(()=> import('components/screens/Contact'));
 const FormikContact = lazy(()=> import('components/screens/FormikContact'));
@@ -37,17 +40,23 @@ export default function App(){
                     <div>
                         <MainMenu onClickChangeThemeButton={handleChangeTheme} />
                         <Switch>
-                            <Route path={spain()}>
-                                <Spain />
-                            </Route>
+                            <Route path={spain()}
+                              component={props => <RequireAuth {...props} Component={Spain} />} 
+                            />
                             <Route path={contact()}>
                                 <Contact />
                             </Route>
                             <Route path={formikContact()}>
                                 <FormikContact />
                             </Route>
-                            <Route path={home()}>
-                                <Home />
+                            <Route path={home()}
+                              component={props => <RequireAuth {...props} Component={Home} />} 
+                            />
+                            <Route path={logout()}>
+                                <Logout />
+                            </Route>
+                            <Route path={login()}>
+                                <Login />
                             </Route>
                         </Switch>
                     </div>

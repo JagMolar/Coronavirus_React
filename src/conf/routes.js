@@ -1,3 +1,11 @@
+export function login(){
+    return '/';
+}
+
+export function logout(){
+    return '/logout';
+}
+
 export function home(){
     return '/home';
 }
