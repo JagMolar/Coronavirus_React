@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {login, home, spain,logaout, contact, formikContact, logout} from 'conf/routes';
+import {login, home, spain, contact, formikContact, logout} from 'conf/routes';
 import PropTypes  from 'prop-types';
 
 const MainMenu = ({onClickChangeThemeButton}) => (

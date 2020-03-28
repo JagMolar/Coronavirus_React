@@ -38,7 +38,7 @@ const Login = () => {
 
     return (
         <div>
-            <h1>Formulario de Contacto</h1>
+            <h1>Inicio de sesión</h1>
             <Formik
                 initialValues= {initialValues}
                 validate= {validateForm}
